@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web development portfolio and experiments">
+    <title>Portfolio - Labs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        class HelloWorld extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = "<p>Hello, world!</p>";
+            }
+        }
+        customElements.define('hello-world', HelloWorld);
+    </script>
+    <style>
+        semantic-box {
+            display: block;
+            padding: 10px;
+            border: 2px solid black;
+            background: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Paul's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Labs & Experiments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <hgroup>
+            <h2>Show case the element</h2>
+            <h3>Exploring the html structure</h3>
+        </hgroup>
+
+        <section>
+            <h2>These are some way text being changed in terms of font style</h2>
+            <p><b>Bold</b>, <i>Italic</i>, <strong>Strong</strong>, <em>Emphasized</em></p>
+            <p>Code example (show in the console): <code>console.log("Hello, World!");</code></p>
+            <pre>
+function greet() {
+    return "Hello, World!";
+}
+            </pre>
+
+            <hr>
+
+            <ul>
+                <li>Unordered List Item 1</li>
+                <li>Unordered List Item 2</li>
+            </ul>
+            <ol>
+                <li>Ordered List Item 1</li>
+                <li>Ordered List Item 2</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Images & Media</h2>
+            <figure>
+                <img src="test.png" alt="Example Image" width="300">
+                <figcaption>An example image</figcaption>
+            </figure>
+
+            <picture>
+                <source srcset="test.png" type="image/jpeg">
+                <img src="example.jpg" alt="Fallback Image">
+            </picture>
+
+            <video controls>
+                <source src="example.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <audio controls>
+                <source src="example.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+
+            <canvas id="myCanvas" width="200" height="100"></canvas>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+            </svg>
+
+            <iframe src="https://example.com" width="300" height="200"></iframe>
+        </section>
+
+        <section>
+            <h2>Forms & User Input</h2>
+            <form>
+                <fieldset>
+                    <legend>Personal Info</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio"></textarea>
+                    <label for="color">Choose Color:</label>
+                    <input type="color" id="color">
+                    <label for="select">Select Option:</label>
+                    <select id="select">
+                        <optgroup label="Group 1">
+                            <option>This is Option 1</option>
+                            <option>This is Option 2</option>
+                        </optgroup>
+                    </select>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Other Semantic Elements</h2>
+            <details>
+                <summary>Click to Expand</summary>
+                <p>Details content goes here.</p>
+            </details>
+
+            <blockquote cite="https://example.com">
+                "This is a blockquote."
+            </blockquote>
+
+            <cite>— Famous Person</cite>
+
+            <dl>
+                <dt>Term</dt>
+                <dd>Definition of the term.</dd>
+            </dl>
+
+            <abbr title="HyperText Markup Language">HTML</abbr> is a foundational language.
+
+            <dfn>Definition Element</dfn> usage.
+
+            <kbd>Please type Ctrl + C</kbd> to copy.
+
+            <ins>Inserted tex examplet</ins>, <del>Deleted text example</del>
+        </section>
+
+        <section>
+            <h2>Tables & Data</h2>
+            <table>
+                <caption>Sample Table</caption>
+                <colgroup>
+                    <col style="background-color:lightgray">
+                </colgroup>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <td>Row 1, Cell 1</td>
+                    <td>Row 1, Cell 2</td>
+                </tr>
+                <tr>
+                    <td>Row 2, Cell 1</td>
+                    <td>Row 2, Cell 2</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Custom Elements</h2>
+            <hello-world></hello-world>
+            <semantic-box>Custom semantic element with CSS styling</semantic-box>
+        </section>
+    </main>
+
+    <aside>
+        <p>This is an aside section.</p>
+    </aside>
+
+    <footer>
+        <address>Contact: <a href="mailto:example@example.com">allenazazssd@gmail.com</a></address>
+        <p>&copy; Paul's Portfolio lab experiment page</p>
+    </footer>
+
+    <noscript>
+        JavaScript is disabled on your browser.
+    </noscript>
+
+    <dialog open>
+        This is a dialog box.
+    </dialog>
+
+    <template>
+        <p>This is a hidden template.</p>
+    </template>
+
+    <search>
+        <input type="search" placeholder="Search...">
+    </search>
+</body>
+
+</html>
