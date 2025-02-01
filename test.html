@@ -2,71 +2,121 @@
 <html lang="en">
 
 <head>
-    <noscript>
-        JavaScript is disabled on your browser.
-    </noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paul's Portfolio - Test Page">
+    <meta name="author" content="Paul">
+    <title>Portfolio - Test Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <script defer src="./js/main.js"></script>
+    <style>
+        /* Semantic custom element styling */
+        semantic-box {
+            display: block;
+            padding: 20px;
+            border: 2px solid black;
+            background: lightgray;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-    <pre>
+    <header>
+        <h1>Paul's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index2.html">About Me</a></li>
+                <li><a href="index3.html">Portfolio</a></li>
+                <li><a href="index4.html">Contact</a></li>
+                <li><a href="test.html">Lab Page</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="media">
+            <h2>Media & Interactive Elements</h2>
+            <figure>
+                <picture>
+                    <source srcset="test.png" type="image/webp">
+                    <img src="test.png" alt="Fallback Image">
+                </picture>
+                <figcaption>Example of a responsive image</figcaption>
+            </figure>
+
+            <video controls>
+                <source src="music.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <audio controls>
+                <source src="example.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+
+            <iframe src="https://example.com" width="300" height="200"></iframe>
+        </section>
+
+        <section id="code">
+            <h2>Code Example</h2>
+            <pre>
+                <code>
 function greet() {
     return "Hello, World!";
 }
-    </pre>
+                </code>
+            </pre>
+        </section>
 
-    <optgroup label="Group 1">
-        <option>This is Option 1</option>
-        <option>This is Option 2</option>
-    </optgroup>
+        <section>
+            <h2>Form with Select</h2>
+            <form>
+                <label for="options">Choose an option:</label>
+                <select id="options">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                </select>
+            </form>
+        </section>
 
-    <datalist>
-        <option value="Option 1">
-        <option value="Option 2">
-    </datalist>
+        <section>
+            <h2>Canvas Example</h2>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid black;"></canvas>
+        </section>
 
-    <details>
-        <summary>Click to Expand</summary>
-        <p>Details content goes here.</p>
-    </details>
+        <section id="custom-elements">
+            <h2>Semantic Custom Element</h2>
+            <semantic-box>This is a custom semantic box</semantic-box>
+        </section>
+    </main>
 
-    <cite>— Famous Person</cite>
+    <script>
+        // Hello World custom element
+        class HelloWorld extends HTMLElement {
+            connectedCallback() {
+                console.log("Hello, world!");
+            }
+        }
+        customElements.define('hello-world', HelloWorld);
+    </script>
 
-    <dl>
-        <dt>Term</dt>
-        <dd>Definition of the term.</dd>
-    </dl>
+    <footer>
+        <p>Check the console for the Hello World message.</p>
+        <hello-world></hello-world>
+    </footer>
 
-    <abbr title="HyperText Markup Language">HTML</abbr>
+    <dialog open>
+        This is a dialog box.
+    </dialog>
 
-    <dfn>Definition Element</dfn>
-
-    <kbd>Press Ctrl + C</kbd>
-
-    <ins>Inserted text example</ins>
-    <del>Deleted text example</del>
-
-    <table>
-        <caption>Sample Table</caption>
-        <colgroup>
-            <col style="background-color:lightgray">
-        </colgroup>
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-        </tr>
-        <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-        </tr>
-    </table>
-
-    <template>
-        <p>This is a hidden template.</p>
-    </template>
-
-    <search>
-        <input type="search" placeholder="Search...">
-    </search>
+    <noscript>
+        <p>JavaScript is disabled in your browser. Some features of this site may not work properly.</p>
+    </noscript>
 </body>
 
 </html>
