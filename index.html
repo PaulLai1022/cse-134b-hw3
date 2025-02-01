@@ -1,44 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-    <link href="./css/main.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paul's Portfolio - About Me">
+    <meta name="author" content="Paul">
     <title>Portfolio - About Me</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <script defer src="./js/main.js"></script>
 </head>
 
 <body>
-    <!-- Main Container -->
-    <div class="container">
+    <header class="header">
+        <h1>Paul's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- Header Section -->
-        <div class="header"></div>
-
-        <!-- About Me Section -->
-        <section class="aboutMe">
+    <main class="container">
+        <section id="about" class="aboutMe">
             <h2 class="sectionTitle">ABOUT ME</h2>
             <p class="description">
-                A detail-oriented Quality Assurance (QA) professional with [number] years of experience designing and
+                A detail-oriented <strong>Quality Assurance (QA) professional</strong> with <b>[number]</b> years of
+                experience designing and
                 executing comprehensive test plans, proficient in identifying and reporting software defects across
                 various platforms and functionalities.
             </p>
             <p class="description">
-                Utilizing both manual and automated testing methodologies to ensure high-quality product delivery while
+                Utilizing both <em>manual</em> and <strong>automated</strong> testing methodologies to ensure
+                high-quality product delivery while
                 collaborating closely with development teams to optimize user experience and resolve issues efficiently.
             </p>
-            <span class="year">2024 - 2025</span>
+            <time class="year">2024 - 2025</time>
         </section>
 
-        <!-- Divider -->
-        <div class="divider"></div>
+        <hr class="divider">
 
-        <!-- Portfolio Navigation -->
-        <section class="portfolioNav">
-            <span class="portfolioTitle">paulsPortfolio -</span>
-            <a href="index2.html" class="nextPage">Next Page</a>
+        <section id="portfolio" class="portfolioNav">
+            <h2>Portfolio Navigation</h2>
+            <figure>
+                <img src="./images/portfolio-thumbnail.jpg" alt="Portfolio preview">
+                <figcaption>Preview of portfolio projects</figcaption>
+            </figure>
+            <p><span class="portfolioTitle">paulsPortfolio -</span>
+                <a href="index2.html" class="nextPage">Next Page</a>
+            </p>
         </section>
+    </main>
 
-    </div>
+    <footer>
+        <address>
+            Contact: <a href="mailto:paul@example.com">paul@example.com</a>
+        </address>
+        <p>&copy; 2024 Paul. All Rights Reserved.</p>
+    </footer>
 </body>
 
 </html>

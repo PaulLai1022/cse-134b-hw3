@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paul's Portfolio - Contact Page">
+    <meta name="author" content="Paul">
+    <title>Portfolio - Contact</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
+    <script defer src="./js/main.js"></script>
+    <style>
+        fieldset {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <aside class="year-vertical">
+            <p>2024 - 2025</p>
+        </aside>
+
+        <section class="contact-section">
+            <hgroup>
+                <h2 class="contact-name">Po-Cheng Lai</h2>
+                <h3>Software Engineer & QA Specialist</h3>
+            </hgroup>
+            <p class="contact-email"><a href="mailto:allenazazssd@gmail.com">allenazazssd@gmail.com</a></p>
+            <p class="contact-link">
+                <a href="https://majestic-paprenjak-dfcbe2.netlify.app/"
+                    target="_blank">https://majestic-paprenjak-dfcbe2.netlify.app/</a>
+            </p>
+
+            <figure class="logo-container">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="10" stroke="black" stroke-width="0.5" fill="white" />
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="2"
+                        font-weight="bold">logo design here</text>
+                </svg>
+            </figure>
+        </section>
+
+        <fieldset>
+            <legend>Contact Form</legend>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+
+                <button type="submit">Send</button>
+            </form>
+        </fieldset>
+
+        <footer class="portfolio-footer">
+            <p>
+                <span class="portfolio-title">Paul’s Portfolio -</span>
+                <button onclick="location.href='nextpage.html'">Next Page</button>
+            </p>
+        </footer>
+    </main>
+</body>
+
+</html>
