@@ -1,0 +1,155 @@
+/* ==============================
+   CSS Variables with Fallbacks
+   ============================== */
+   :root {
+    --primary-color: color-mix(in srgb, #3498db 80%, white);
+    --secondary-color: #2c3e50;
+    --font-primary: 'Inter', sans-serif;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+}
+
+/* ==============================
+   Global Styles
+   ============================== */
+body {
+    font-family: var(--font-primary), Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+/* ==============================
+   Header & Navigation
+   ============================== */
+header {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ==============================
+   Main Layout - CSS Grid
+   ============================== */
+.container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* ==============================
+   Skills Section - CSS Grid & Flexbox
+   ============================== */
+.skills {
+    text-align: center;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.skillCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.skillCard:hover {
+    transform: scale(1.05);
+}
+
+/* ==============================
+   Portfolio Navigation
+   ============================== */
+.portfolioNav {
+    text-align: center;
+    background: var(--secondary-color);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.portfolioNav img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.nextPage {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nextPage:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* ==============================
+   Responsive Design - Media Queries
+   ============================== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ==============================
+   Animations & Transitions
+   ============================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.sectionTitle {
+    animation: fadeIn 1s ease-in-out;
+}
