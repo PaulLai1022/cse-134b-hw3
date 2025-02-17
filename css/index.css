@@ -6,68 +6,92 @@
 }
 
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --text-color: black;
-  --background-color: white;
+  --primary-color: color-mix(in srgb, #3498db 80%, white, #3498db);
+  --secondary-color: #2c3e50;
+  --font-primary: "Inter", sans-serif;
+  --text-color: #333;
+  --bg-color: #f8f9fa;
 }
 
+/* Prevent Scrolling & Use Dynamic Viewport Units */
+html,
 body {
-  color: var(--text-color, #000);
-  background-color: var(--background-color, #fff);
-  font-family: "Inter", Arial, sans-serif;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: 100vh;
+  height: 100dvh;
+  width: 100dvw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-primary), Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 /* Header Styling */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: var(--primary-color);
+header {
+  background: var(--secondary-color);
   color: white;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  flex-shrink: 0;
 }
 
+/* Navigation with New Selector `:has()` */
 nav ul {
   display: flex;
+  justify-content: center;
   list-style: none;
-  padding: 0;
+  padding-top: 0.5rem;
+}
+
+nav ul:has(li:hover) {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease-in-out;
 }
 
 nav ul li {
-  margin: 0 1rem;
+  margin: 0 20px;
 }
 
 nav ul li a {
-  text-decoration: none;
   color: white;
-  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
   transition: color 0.3s ease-in-out;
+  letter-spacing: 1px;
 }
 
 nav ul li a:hover {
-  color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
-/* Main Container */
+/* Prevent Visited Links from Turning Purple */
+nav ul li a:visited {
+  color: white;
+}
+
+/* Use Grid Layout for Main Content */
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
   align-items: center;
-  gap: 2rem;
-  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  height: 60dvh;
+  padding: 0 5%;
+  gap: 20px;
 }
 
+/* About Me Section */
 .aboutMe {
-  max-width: 600px;
-  animation: fadeIn 1s ease-out;
+  width: 100%;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .aboutMe h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 /* Profile Image */
@@ -77,34 +101,67 @@ nav ul li a:hover {
 }
 
 .image-container img {
-  width: 100%;
-  max-width: 400px;
+  max-width: 50%;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
+  object-fit: contain;
 }
 
+/* Transform on Hover */
 .image-container img:hover {
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(3deg);
 }
 
-/* Footer */
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Footer Styling */
 footer {
+  background: var(--secondary-color);
+  color: white;
   text-align: center;
   padding: 1rem;
-  background-color: var(--primary-color);
-  color: white;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+address a:visited {
+  color: aquamarine;
+}
+
+/* CSS Keyframe Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
-    text-align: center;
+    height: auto;
+  }
+
+  .aboutMe {
+    width: 90%;
   }
 
   .image-container {
-    grid-column: auto;
+    width: 90%;
+  }
+
+  .image-container img {
+    max-width: 250px;
+    max-height: 200px;
   }
 
   nav ul {
