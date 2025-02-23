@@ -31,7 +31,7 @@ body {
 /* ==============================
        Header & Navigation
        ============================== */
-.header {
+header {
   background: var(--secondary-color);
   color: white;
   padding: 1rem;
@@ -40,31 +40,55 @@ body {
   flex-shrink: 0;
 }
 
+.nav-toggle {
+  display: none;
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 0.5rem 0;
+  padding-top: 0.5rem;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: color 0.3s ease-in-out;
+  letter-spacing: 1px;
 }
 
 nav ul li a:hover {
   color: var(--primary-color);
 }
 
-nav ul li a.active {
-  font-weight: bold;
-  text-decoration: underline;
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    background: var(--secondary-color);
+  }
+
+  nav ul.active {
+    display: flex;
+  }
 }
 
 /* ==============================
