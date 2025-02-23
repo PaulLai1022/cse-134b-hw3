@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form (No JS)</title>
+    <link rel="stylesheet" href="./css/form-no-js.css">
+</head>
+<body>
+    <main class="container">
+        <fieldset>
+            <legend>Contact Form</legend>
+            <form action="https://httpbin.org/post" method="POST" novalidate>
+                
+                <label for="name">Name: <span>*</span></label>
+                <input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="Enter your name">
+                <output class="error-message" for="name"></output>
+                <output class="info-message" for="name"></output>
+                
+                <label for="email">Email: <span>*</span></label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <output class="error-message" for="email"></output>
+                <output class="info-message" for="email"></output>
+                
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" required minlength="10" maxlength="300" 
+                          pattern="[A-Za-z0-9 .,!?'-]+" placeholder="Your message (10-300 chars, no special symbols)">
+                </textarea>
+                <output class="error-message" for="comments"></output>
+                <output class="info-message" for="comments"></output>
+                
+                <!-- Hidden field -->
+                <input type="hidden" name="possible_bot" value="true">
+                
+                <button type="submit">Send</button>
+            </form>
+        </fieldset>
+    </main>
+</body>
+</html>
