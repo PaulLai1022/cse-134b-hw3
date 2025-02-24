@@ -48,10 +48,7 @@ input, textarea {
     border-radius: 5px;
 }
 
-textarea {
-    min-height: 100px;
-    resize: vertical;
-}
+
 
 /* Style placeholders */
 input:placeholder-shown, textarea:placeholder-shown {
