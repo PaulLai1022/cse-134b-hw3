@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");
     const commentsInput = document.getElementById("comments");
     const errorsField = document.getElementById("form-errors");
+    const toggleSwitch = document.getElementById("theme-toggle");
+    const body = document.body;
     
     const errorMessages = {
         name: "Name must be between 2 and 50 characters.",
@@ -72,33 +74,23 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Updated form-errors value:", errorsField.value); // Debugging log
 
         form.submit();
-
     });
 
-
-    const toggleButton = document.getElementById("theme-toggle");
-    const body = document.body;
-
-    // Ensure the stored theme loads on page refresh
-    if (localStorage.getItem("theme") === "dark") {
-        body.classList.add("dark-mode");
-        toggleButton.textContent = "🌙"; // Show Moon Icon
-    } else {
-        body.classList.remove("dark-mode");
-        toggleButton.textContent = "🌞"; // Show Sun Icon
-    }
-
-    // Toggle Theme on Click (Fixing the Hover Issue)
-    toggleButton.addEventListener("click", function () {
-        if (body.classList.contains("dark-mode")) {
-            body.classList.remove("dark-mode");
-            toggleButton.textContent = "🌞"; // Switch to Sun Icon
-            localStorage.setItem("theme", "light");
-        } else {
+    // Theme Toggle Functionality
+    if (toggleSwitch) {
+        if (localStorage.getItem("theme") === "dark") {
             body.classList.add("dark-mode");
-            toggleButton.textContent = "🌙"; // Switch to Moon Icon
-            localStorage.setItem("theme", "dark");
+            toggleSwitch.checked = true;
         }
-    });
-    
+
+        toggleSwitch.addEventListener("change", function () {
+            if (toggleSwitch.checked) {
+                body.classList.add("dark-mode");
+                localStorage.setItem("theme", "dark");
+            } else {
+                body.classList.remove("dark-mode");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    }
 });

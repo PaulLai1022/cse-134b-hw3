@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form (Final JS Enhanced)</title>
-    <link rel="stylesheet" href="./css/form-no-js.css">
+    <link rel="stylesheet" href="./css/form-with-js.css">
     <script defer src="./js/form-validation.js"></script>
 </head>
 
@@ -13,9 +13,14 @@
 
 
     <main class="container">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-            🌞
-        </button>
+
+        <div class = "backGroundChange"></div>
+        <!-- Rounded switch -->
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider round"></span>
+        </label>
+        
 
         <fieldset>
             <legend>Contact Form</legend>
