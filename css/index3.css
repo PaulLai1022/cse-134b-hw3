@@ -33,14 +33,14 @@ body {
        Project Card
      ============================== */
 
-.membersCards {
+.projectList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.card {
-  margin: 0.5rem;
+.projectCard {
+  margin: 1rem;
 
   position: relative;
   display: flex;
@@ -56,35 +56,35 @@ body {
   border-radius: 0.25rem;
 }
 
-.parent-card {
-  height: 250px;
+.parentCard {
+  height: 300px;
   position: relative;
-  width: 190px;
+  width: 370px;
 }
 
-.member-card {
+.card {
   background-color: #121212;
   border: thin solid gray;
-  border-radius: 5px;
+  border-radius: 10px;
   color: #fff;
   cursor: pointer;
-  height: 250px;
+  height: 300px;
   margin: 0 auto;
   opacity: 1;
-  padding: 25px;
+  padding: 35px;
   text-align: center;
   transition: 0.5s ease;
-  width: 190px;
+  width: 370px;
 }
 
-.contact-card {
+.content {
   align-items: center;
   background-color: #000;
   border: thin solid gray;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   display: flex;
-  height: 250px;
+  height: 300px;
   justify-content: center;
   left: 50%;
   margin: 0 auto;
@@ -94,38 +94,51 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   transition: 1s ease;
-  width: 190px;
+  width: 370px;
 }
 
 .contact-card a {
-  font-size: 3rem;
-  padding: 0 1rem;
+  font-size: 5rem;
+  padding: 0 2rem;
   text-decoration: none;
   color: gray;
 }
 
-.parent-card:hover .profile-card {
+.parentcard:hover .card {
   opacity: 0.2;
 }
 
-.parent-card:hover .contact-card {
+.parentCard:hover .contact-card {
   opacity: 0.6;
 }
 
-.profile-card {
+.card {
   display: flex;
   flex-direction: column;
 }
 
-.members .img {
-  overflow-clip-margin: content-box;
-  overflow: clip;
+.card-top {
+  display: flex; /* Ensures content inside adjusts properly */
+  justify-content: center; /* Centers image horizontally */
+  align-items: center; /* Centers image vertically if needed */
+  overflow: hidden; /* Ensures no overflow */
+  max-width: 100%; /* Limits width to parent */
+}
+
+.card-bottom{
+  margin-top: 7px;
+}
+
+.projectImage {
+  max-width: 100%; /* Ensures image does not exceed parent width */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Keeps the whole image visible */
 }
 
 .members .content .info {
-  font-size: 1.5rem;
+  font-size: 3rem;
   color: #111;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 }
 
 /* ==============================
