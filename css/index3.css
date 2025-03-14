@@ -7,7 +7,8 @@
   --font-primary: "Inter", sans-serif;
   --text-color: #333;
   --bg-color: #f8f9fa;
-  --highlight-color: color(display-p3, 0.5, 0.2, 0.7); /* Wider gamut color */
+  --highlight-color: color(display-p3, 0.5, 0.2, 0.7);
+  /* Wider gamut color */
 }
 
 * {
@@ -29,6 +30,7 @@ body {
   color: var(--text-color);
   background-color: var(--bg-color);
 }
+
 /* ==============================
        Project Card
      ============================== */
@@ -84,6 +86,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   height: 300px;
   justify-content: center;
   left: 50%;
@@ -97,19 +100,28 @@ body {
   width: 370px;
 }
 
-.contact-card a {
-  font-size: 5rem;
+.content p {
+  font-size: 1rem;
   padding: 0 2rem;
   text-decoration: none;
-  color: gray;
+  color: whitesmoke;
+}
+
+.content button {
+  margin-top: 1.5rem;
+  padding: 5px;
+  background-color: rgb(111, 110, 110);
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
 }
 
 .parentcard:hover .card {
   opacity: 0.2;
 }
 
-.parentCard:hover .contact-card {
-  opacity: 0.6;
+.parentCard:hover .content {
+  opacity: 0.8;
 }
 
 .card {
@@ -118,21 +130,32 @@ body {
 }
 
 .card-top {
-  display: flex; /* Ensures content inside adjusts properly */
-  justify-content: center; /* Centers image horizontally */
-  align-items: center; /* Centers image vertically if needed */
-  overflow: hidden; /* Ensures no overflow */
-  max-width: 100%; /* Limits width to parent */
+  display: flex;
+  /* Ensures content inside adjusts properly */
+  justify-content: center;
+  /* Centers image horizontally */
+  align-items: center;
+  /* Centers image vertically if needed */
+  /* Ensures no overflow */
+  max-width: 100%;
+  /* Limits width to parent */
 }
 
-.card-bottom{
+.card-top h2{
+  color: gray;
+}
+
+.card-bottom {
   margin-top: 7px;
 }
 
 .projectImage {
-  max-width: 100%; /* Ensures image does not exceed parent width */
-  height: auto; /* Maintains aspect ratio */
-  object-fit: contain; /* Keeps the whole image visible */
+  max-width: 100%;
+  /* Ensures image does not exceed parent width */
+  height: auto;
+  /* Maintains aspect ratio */
+  object-fit: contain;
+  /* Keeps the whole image visible */
 }
 
 .members .content .info {
@@ -289,8 +312,10 @@ nav ul li a:hover {
 
 @media (max-width: 768px) {
   .main-image {
-    content: url("./images/project-image1-small.jpg"); /* Load smaller image */
+    content: url("./images/project-image1-small.jpg");
+    /* Load smaller image */
   }
+
   .thumbnail-image {
     content: url("./images/project-image2-small.jpg");
   }
@@ -364,6 +389,7 @@ address a:visited {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
