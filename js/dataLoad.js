@@ -27,3 +27,10 @@ document.getElementById("loadLocal").addEventListener("click", () => {
     const data = JSON.parse(localStorage.getItem("userData")) || [];
     displayData(data);
 });
+
+document.getElementById("loadRemote").addEventListener("click", () => {
+    fetch("https://my-json-server.typicode.com/PaulLai1022/YOUR_REPO_NAME/users") // Replace with your actual API URL
+        .then(response => response.json())
+        .then(data => displayData(data))
+        .catch(error => console.error("Error fetching data:", error));
+});
