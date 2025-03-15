@@ -29,7 +29,7 @@ document.getElementById("loadLocal").addEventListener("click", () => {
 });
 
 document.getElementById("loadRemote").addEventListener("click", () => {
-    fetch("https://my-json-server.typicode.com/PaulLai1022/YOUR_REPO_NAME/users") // Replace with your actual API URL
+    fetch("https://my-json-server.typicode.com/PaulLai1022/cse-134b-hw3/users")
         .then(response => response.json())
         .then(data => displayData(data))
         .catch(error => console.error("Error fetching data:", error));
