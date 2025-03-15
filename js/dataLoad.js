@@ -31,10 +31,22 @@ document.getElementById("loadLocal").addEventListener("click", () => {
 document.getElementById("loadRemote").addEventListener("click", () => {
     fetch("https://api.jsonbin.io/v3/b/67d4cc2b8960c979a571c6e8", {
         headers: { 
-            "X-Master-Key": "$2a$10$6crwpQuaNMYRIewNq..." // Replace with your actual key
+            "X-Master-Key": "$2a$10$6crwpQuaNMYRIewNqo40heZv924VxWF.VpiyqTtgw5pdcN9ZfKrnS"
         }
     })
-    .then(response => response.json())
-    .then(data => displayData(data.record)) // Use `.record` to access stored JSON
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Fetched Data:", data); // Debugging output
+        if (data && data.record) {
+            displayData(data.record);
+        } else {
+            throw new Error("Invalid API response format");
+        }
+    })
     .catch(error => console.error("Error fetching data:", error));
 });
