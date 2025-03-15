@@ -30,9 +30,11 @@ document.getElementById("loadLocal").addEventListener("click", () => {
 
 document.getElementById("loadRemote").addEventListener("click", () => {
     fetch("https://api.jsonbin.io/v3/b/67d4cc2b8960c979a571c6e8", {
-        headers: { "X-Master-Key": "YOUR_API_KEY" } // Optional for private bins
+        headers: { 
+            "X-Master-Key": "$2a$10$6crwpQuaNMYRIewNq..." // Replace with your actual key
+        }
     })
     .then(response => response.json())
-    .then(data => displayData(data.record)) // Use `.record` to access stored data
+    .then(data => displayData(data.record)) // Use `.record` to access stored JSON
     .catch(error => console.error("Error fetching data:", error));
 });
