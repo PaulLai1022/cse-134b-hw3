@@ -1,15 +1,12 @@
-// Sample dataset
+// Sample dataset (overwrite old data)
 const sampleData = [
-    { id: 1, name: "Local Alice","type": "localData", age: 2777 },
-    { id: 2, name: "Local Bob","type": "localData", age: 30 },
-    { id: 3, name: "Local Charlie","type": "localData", age: 22 }
+    { id: 1, name: "Local Alice", type: "localData", age: 27 },
+    { id: 2, name: "Local Bob", type: "localData", age: 30 },
+    { id: 3, name: "Local Charlie", type: "localData", age: 22 }
 ];
 
-// Store sample data in localStorage if not already stored
-if (!localStorage.getItem("userData")) {
-    localStorage.setItem("userData", JSON.stringify(sampleData));
-}
-
+// Always update local storage with new sample data
+localStorage.setItem("userData", JSON.stringify(sampleData));
 
 function displayData(data) {
     const container = document.getElementById("dataContainer");
