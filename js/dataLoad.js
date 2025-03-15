@@ -29,8 +29,10 @@ document.getElementById("loadLocal").addEventListener("click", () => {
 });
 
 document.getElementById("loadRemote").addEventListener("click", () => {
-    fetch("https://my-json-server.typicode.com/PaulLai1022/cse-134b-hw3/users")
-        .then(response => response.json())
-        .then(data => displayData(data))
-        .catch(error => console.error("Error fetching data:", error));
+    fetch("https://api.jsonbin.io/v3/b/67d4cc2b8960c979a571c6e8", {
+        headers: { "X-Master-Key": "YOUR_API_KEY" } // Optional for private bins
+    })
+    .then(response => response.json())
+    .then(data => displayData(data.record)) // Use `.record` to access stored data
+    .catch(error => console.error("Error fetching data:", error));
 });
