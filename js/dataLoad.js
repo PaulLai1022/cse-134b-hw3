@@ -1,8 +1,8 @@
 // Sample dataset
 const sampleData = [
-    { id: 1, name: "Alice","type": "localData", age: 25 },
-    { id: 2, name: "Bob","type": "localData", age: 30 },
-    { id: 3, name: "Charlie","type": "localData", age: 22 }
+    { id: 1, name: "Local Alice","type": "localData", age: 25 },
+    { id: 2, name: "Local Bob","type": "localData", age: 30 },
+    { id: 3, name: "Local Charlie","type": "localData", age: 22 }
 ];
 
 // Store sample data in localStorage if not already stored
